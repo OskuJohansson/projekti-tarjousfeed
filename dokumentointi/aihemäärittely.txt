@@ -1,20 +1,22 @@
 Aihe: tarjoussovellus
 
-Tavoitteena on luoda sovellus, johon yritykset tuo omia tarjouksiaan ja kuluttajat voivat niitä selata. 
+Tavoitteena on luoda sovellus, johon yritykset tuo omia tarjouksiaan ja kuluttajat voivat niitï¿½ selata. 
 
-Selaaminen onnistuu tunnisteiden avulla, esim. #ruoka. Omat suosikkitunnisteet voi lisätä suosikit-listaan ja käyttäjä saa ilmoituksen aina kun tunnisteilla on julkaistu uusia tarjouksia.
+Selaaminen onnistuu tunnisteiden avulla, esim. #ruoka. Omat suosikkitunnisteet voi lisï¿½tï¿½ suosikit-listaan ja
+kï¿½yttï¿½jï¿½ saa ilmoituksen aina kun tunnisteilla on julkaistu uusia tarjouksia.
 
-Aluski tarjouksien lisääminen menee ylläpidon kautta, mutta myöhemmin yritykset voivat lisätä niitä suoraan järjestelmään.
+Aluski tarjouksien lisï¿½ï¿½minen menee yllï¿½pidon kautta, 
+mutta myï¿½hemmin yritykset voivat lisï¿½tï¿½ niitï¿½ suoraan jï¿½rjestelmï¿½ï¿½n.
 
 
-Käyttäjät: Yritykset ja kuluttajat
+Kï¿½yttï¿½jï¿½t: Yritykset ja kuluttajat
 
-Kaikkien käyttäjien toiminnot:
--järjestelmään kirjautuminen
+Kaikkien kï¿½yttï¿½jien toiminnot:
+-jï¿½rjestelmï¿½ï¿½n kirjautuminen
 -tarjousten tarkastelu
 
 Yritysten toiminnot:
--tarjousten lisääminen, muokkaaminen ja poistaminen
+-tarjousten lisï¿½ï¿½minen, muokkaaminen ja poistaminen
 
 Kuluttajien toiminnot:
 -tarjousten ja yritysten arvostelu ja kommentointi
