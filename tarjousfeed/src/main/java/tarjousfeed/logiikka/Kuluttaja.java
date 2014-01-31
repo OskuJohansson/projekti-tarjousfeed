@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package ohha.tarjousfeed;
+package tarjousfeed.logiikka;
 
 import java.util.*;
 

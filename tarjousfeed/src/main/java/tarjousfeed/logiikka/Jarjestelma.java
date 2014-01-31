@@ -3,22 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ohha.tarjousfeed;
+package tarjousfeed.logiikka;
 
 import java.util.*;
 
 public class Jarjestelma {
 
-    private ArrayList<Kayttaja> kayttajat;
-    private Feed feed;
+    private final ArrayList<Kayttaja> kayttajat;
+    private final Feed feed;
 
     public Jarjestelma() {
         this.kayttajat = new ArrayList<>();
         this.feed = new Feed();
     }
 
-    public void rekisteroidy(Kayttaja kayttaja) {
+    public boolean rekisteroidy(Kayttaja kayttaja) {
+        if (!kayttaja.kelpaakoSalasana(kayttaja.getSalasana())) {
+            return false;
+        }
+        for (Kayttaja kayttaja1 : kayttajat) {
+            if (kayttaja1.getKayttajanimi().equals(kayttaja.getKayttajanimi())) {
+                return false;
+            }
+        }
         kayttajat.add(kayttaja);
+        return true;
     }
 
     public boolean kirjaudu(String kayttajanimi, String salasana) {

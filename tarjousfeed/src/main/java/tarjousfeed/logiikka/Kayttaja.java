@@ -1,4 +1,4 @@
-package ohha.tarjousfeed;
+package tarjousfeed.logiikka;
 
 public class Kayttaja {
 
@@ -25,6 +25,9 @@ public class Kayttaja {
     }
 
     public void setSalasana(String salasana) {
+        if (!this.kelpaakoSalasana(salasana)) {
+            return;
+        }
         this.salasana = salasana;
     }
     public String getNimi() {
@@ -33,6 +36,20 @@ public class Kayttaja {
 
     public void setNimi(String nimi) {
         this.nimi = nimi;
+    }
+    
+    public boolean kelpaakoSalasana(String salasana) {
+        if (this.salasana.length() < 8 || this.salasana.length() > 32) {
+            return false;
+        }
+        int apu = 0;
+        for (int i = 0; i < salasana.length(); i++) {
+            if (Character.isUpperCase(salasana.charAt(i))) {
+               apu++;
+            }
+            
+        }
+        return 0 < apu;
     }
 
     public String getEmail() {

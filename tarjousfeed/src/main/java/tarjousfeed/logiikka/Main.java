@@ -1,20 +1,18 @@
-package ohha.tarjousfeed;
+package tarjousfeed.logiikka;
 
-/**
- * Hello world!
- *
- */
+import java.util.*;
+
 public class Main {
 
     public static void main(String[] args) {
         Jarjestelma j = new Jarjestelma();
 
-        Kayttaja osku = new Kuluttaja("Osku", "B");
+        Kayttaja osku = new Kuluttaja("Osku", "Banaaaani");
 
-        System.out.println("Onko Osku kirjautunut: " + j.kirjaudu("Osku", "B"));
+        System.out.println("Onko Osku kirjautunut: " + j.kirjaudu("Osku", "Banaaaani"));
         j.rekisteroidy(osku);
-        System.out.println("Onko Osku kirjautunut: " + j.kirjaudu("osku", "B"));
-        System.out.println("Onko Osku kirjautunut: " + j.kirjaudu("Osku", "B"));
+        System.out.println("Onko Osku kirjautunut: " + j.kirjaudu("osku", "Banaaaani"));
+        System.out.println("Onko Osku kirjautunut: " + j.kirjaudu("Osku", "Banaaaani"));
         System.out.println("");
         j.rekisteroidy(new Kuluttaja("Mikko", ""));
         j.rekisteroidy(new Kuluttaja("Matti", "A"));
@@ -31,6 +29,8 @@ public class Main {
         j.naytaSyote(Hese, hamppari);
         j.naytaTunnisteet(hamppari);
         j.naytaTunnisteet(new Syote());
+        
+
 
     }
 }

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package ohha.tarjousfeed;
+package tarjousfeed.logiikka;
 
 import java.util.*;
 
@@ -14,7 +14,7 @@ import java.util.*;
  */
 public class Yritys extends Kayttaja {
     
-    private List<Syote> syotteet;
+    private final List<Syote> syotteet;
 
     public Yritys(String kayttajanimi, String salasana) {
         super(kayttajanimi, salasana);

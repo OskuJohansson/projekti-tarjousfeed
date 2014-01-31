@@ -1,4 +1,4 @@
-package ohha.tarjousfeed;
+package tarjousfeed.logiikka;
 
 import java.util.*;
 

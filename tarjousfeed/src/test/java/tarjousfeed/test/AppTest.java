@@ -1,4 +1,4 @@
-package ohha.tarjousfeed;
+package tarjousfeed.test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
