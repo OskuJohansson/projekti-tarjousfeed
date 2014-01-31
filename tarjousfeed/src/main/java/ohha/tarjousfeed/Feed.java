@@ -8,20 +8,20 @@ package ohha.tarjousfeed;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Virta {
+public class Feed {
 
     private List<Syote> syotteet;
 
-    public Virta() {
+    public Feed() {
         this.syotteet = new ArrayList<>();
-
     }
 
     public List<Syote> getSyotteet() {
         return syotteet;
     }
 
-    public void setSyotteet(List<Syote> syotteet) {
-        this.syotteet = syotteet;
+    public void lisaaSyote(Syote syote) {
+        syotteet.add(syote);
     }
+    
 }

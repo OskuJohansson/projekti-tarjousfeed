@@ -6,17 +6,28 @@
 
 package ohha.tarjousfeed;
 
+import java.util.*;
+
 /**
  *
  * @author oskajoha
  */
 public class Yritys extends Kayttaja {
+    
+    private List<Syote> syotteet;
 
     public Yritys(String kayttajanimi, String salasana) {
         super(kayttajanimi, salasana);
+        this.syotteet = new ArrayList<>();
     }
     
-    public void asetaSyote() {
-        
+    public void asetaSyote(Syote syote) {
+        syotteet.add(syote);
     }
+
+    public List<Syote> getSyotteet() {
+        return syotteet;
+    }
+    
+    
 }
