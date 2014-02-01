@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tarjousfeed.logiikka;
 
 import java.util.*;
@@ -30,14 +25,21 @@ public class Jarjestelma {
         return true;
     }
 
-    public boolean kirjaudu(String kayttajanimi, String salasana) {
+    public boolean kirjauduSisaan(String kayttajanimi, String salasana) {
         for (Kayttaja kayttaja : kayttajat) {
-            if (kayttaja.getKayttajanimi().equals(kayttajanimi)) {
-                return kayttaja.getSalasana().equals(salasana);
+            if (kayttaja.getKayttajanimi().equals(kayttajanimi) && kayttaja.getSalasana().equals(salasana)) {
+                kayttaja.kirjauduSisaan();
+                return true;
+            } else {
+                return false;
             }
         }
-
         return false;
+    }
+    
+    public void kirjauduUlos(Kayttaja k) {
+        if (k.onkoKirjautunut() == true)
+            k.kirjausuUlos();
     }
 
     public void listaaKayttajat() {
@@ -45,47 +47,26 @@ public class Jarjestelma {
             System.out.println(kayttaja.getKayttajanimi());
         }
     }
-    
-     public void lisaaSyote(Yritys y, Syote s) {
-        feed.lisaaSyote(s);
-        y.asetaSyote(s);
+
+    public void lisaaSyote(Yritys y, Syote s) {
+        feed.lisaaSyote(y, s);
     }
 
-    public void naytaTunnisteet(Syote s) {
-        if (!feed.getSyotteet().contains(s)) {
+    public void naytaTunnisteet(Yritys y, Syote s) {
+        if (!feed.getSyotteet(y).contains(s)) {
             System.out.println("Syötettä ei löytynyt!");
         } else {
-            for (Syote syote : feed.getSyotteet()) {
-                if (syote.equals(s)) {
-                    System.out.println("Tunnisteet: " + s.getTunnisteet());
-                }
-            }
+            System.out.println(s.getTunnisteet());
         }
     }
-
-   
 
     public void naytaSyote(Yritys y, Syote s) {
-        if (!y.getSyotteet().contains(s)) {
+        if (!feed.getSyotteet(y).contains(s)) {
             System.out.println("Syotetta ei löytynyt!");
         } else {
-            for (Syote syote : y.getSyotteet()) {
-                if (syote.equals(s)) {
-                    System.out.println("Syote: " + s.getSisalto());
-                }
-            }
+            System.out.println("Syote: " + s.getSisalto());
+
         }
     }
-    
-     public void naytaSyote(Syote s) {
-        if (!feed.getSyotteet().contains(s)) {
-            System.out.println("Syötettä ei löytynyt!");
-        } else {
-            for (Syote syote : feed.getSyotteet()) {
-                if (syote.equals(s)) {
-                    System.out.println("Syöte: " + s.getTunnisteet());
-                }
-            }
-        }
-    }
+
 }

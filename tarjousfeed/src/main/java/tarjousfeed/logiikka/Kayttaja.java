@@ -6,6 +6,7 @@ public class Kayttaja {
     private String salasana;
     private String nimi;
     private String email;
+    private boolean kirjautunut;
 
     public Kayttaja(String kayttajanimi, String salasana) {
         this.kayttajanimi = kayttajanimi;
@@ -60,4 +61,15 @@ public class Kayttaja {
         this.email = email;
     }
 
+    public void kirjauduSisaan() {
+        kirjautunut = true;
+    }
+    
+    public void kirjausuUlos() {
+        kirjautunut = false;
+    }
+    
+    public boolean onkoKirjautunut() {
+        return kirjautunut;
+    }
 }

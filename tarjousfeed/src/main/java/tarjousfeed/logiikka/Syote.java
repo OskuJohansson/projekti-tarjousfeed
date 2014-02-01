@@ -5,7 +5,7 @@ import java.util.*;
 public class Syote {
 
     private String sisalto;
-    private List<String> tunnisteet;
+    private final List<String> tunnisteet;
 
     public Syote() {
         this.tunnisteet = new ArrayList<>();
@@ -29,9 +29,7 @@ public class Syote {
     }
 
     public void setTunniste(String... tunniste) {
-        for (String string : tunniste) {
-            this.tunnisteet.add(string);
-        }
+        this.tunnisteet.addAll(Arrays.asList(tunniste));
 
     }
 

@@ -1,26 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tarjousfeed.logiikka;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Feed {
 
-    private final ArrayList<Syote> syotteet;
+    private final Map<Yritys, ArrayList<Syote>> syotteet;
 
     public Feed() {
-        this.syotteet = new ArrayList<>();
+        this.syotteet = new HashMap<>();
     }
 
-    public ArrayList<Syote> getSyotteet() {
-        return syotteet;
+    public ArrayList<Syote> getSyotteet(Yritys y) {
+        return syotteet.get(y);
     }
 
-    public void lisaaSyote(Syote syote) {
-        syotteet.add(syote);
+    public void lisaaSyote(Yritys y, Syote s) {
+        if (syotteet.get(y) == null) {
+            syotteet.put(y, new ArrayList<Syote>());
+        }
+        syotteet.get(y).add(s);
     }
-    
+
 }
