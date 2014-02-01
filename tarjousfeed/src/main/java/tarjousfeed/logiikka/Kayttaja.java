@@ -47,8 +47,7 @@ public class Kayttaja {
         for (int i = 0; i < salasana.length(); i++) {
             if (Character.isUpperCase(salasana.charAt(i))) {
                apu++;
-            }
-            
+            }            
         }
         return 0 < apu;
     }
@@ -65,7 +64,7 @@ public class Kayttaja {
         kirjautunut = true;
     }
     
-    public void kirjausuUlos() {
+    public void kirjauduUlos() {
         kirjautunut = false;
     }
     

@@ -36,10 +36,11 @@ public class Jarjestelma {
         }
         return false;
     }
-    
+
     public void kirjauduUlos(Kayttaja k) {
-        if (k.onkoKirjautunut() == true)
-            k.kirjausuUlos();
+        if (k.onkoKirjautunut() == true) {
+            k.kirjauduUlos();
+        }
     }
 
     public void listaaKayttajat() {
@@ -48,24 +49,35 @@ public class Jarjestelma {
         }
     }
 
-    public void lisaaSyote(Yritys y, Syote s) {
-        feed.lisaaSyote(y, s);
+    public void listaaKirjautuneet() {
+        for (Kayttaja kayttaja : kayttajat) {
+            if (kayttaja.onkoKirjautunut() == true) {
+                System.out.println(kayttaja.getKayttajanimi());
+            }
+        }
+    }
+
+    public boolean lisaaSyote(Yritys y, Syote s) {
+        if (!kayttajat.contains(y)) {
+            return false;
+        }
+        return feed.lisaaSyote(y, s);
     }
 
     public void naytaTunnisteet(Yritys y, Syote s) {
-        if (!feed.getSyotteet(y).contains(s)) {
-            System.out.println("Syötettä ei löytynyt!");
-        } else {
+        if (feed.haeYrityksenSyotteet(y).contains(s)) {
             System.out.println(s.getTunnisteet());
+        } else {
+            System.out.println("Syötettä ei löytynyt!");
         }
     }
 
     public void naytaSyote(Yritys y, Syote s) {
-        if (!feed.getSyotteet(y).contains(s)) {
-            System.out.println("Syotetta ei löytynyt!");
-        } else {
+        if (feed.haeYrityksenSyotteet(y).contains(s)) {
             System.out.println("Syote: " + s.getSisalto());
 
+        } else {
+            System.out.println("Syotetta ei löytynyt!");
         }
     }
 
