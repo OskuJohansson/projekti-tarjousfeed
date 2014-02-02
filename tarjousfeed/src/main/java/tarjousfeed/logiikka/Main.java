@@ -26,22 +26,22 @@ public class Main {
 //        j.listaaKayttajat();
 //        System.out.println("");
 
-        Yritys hese = new Yritys("Hesburger", "Japadapaduu");
-        j.rekisteroidy(hese);
-        j.kirjauduSisaan("Hesburger", "Japadapaduu");
-        Syote hamppari = new Syote("Nyt kerroshampurilainen vain 4,95€");
-        hamppari.setTunniste("Ruoka", "Rasva");
-        j.lisaaSyote(hese, hamppari);
+//        Yritys hese = new Yritys("Hesburger", "Japadapaduu");
+//        j.rekisteroidy(hese);
+//        j.kirjauduSisaan("Hesburger", "Japadapaduu");
+//        Syote hamppari = new Syote("Nyt kerroshampurilainen vain 4,95€");
+//        hamppari.setTunniste("Ruoka", "Rasva");
+//        j.lisaaSyote(hese, hamppari);
+//        
+//        j.naytaSyote(hese, hamppari);
+//        j.naytaTunnisteet(hese, hamppari);
+//        
+//        j.lisaaSyote(new Yritys("MacDonald's", "Töttöröö"), hamppari);
+//        j.naytaTunnisteet(hese, new Syote());
         
-        j.naytaSyote(hese, hamppari);
-        j.naytaTunnisteet(hese, hamppari);
         
-        j.lisaaSyote(new Yritys("MacDonald's", "Töttöröö"), hamppari);
-        j.naytaTunnisteet(hese, new Syote());
-        
-        
-//        Kayttoliittyma kayttoliittyma = new Kayttoliittyma();
-//        SwingUtilities.invokeLater(kayttoliittyma);
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma();
+        SwingUtilities.invokeLater(kayttoliittyma);
         
 
 

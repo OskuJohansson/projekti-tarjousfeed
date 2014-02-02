@@ -1,9 +1,9 @@
-
 package tarjousfeed.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import javax.swing.*;
 
 /**
@@ -30,10 +30,25 @@ public class Kayttoliittyma implements Runnable {
     private void luoKomponentit(Container container) {
         container.setLayout(new BorderLayout());
 
-        container.add(new JScrollBar(), BorderLayout.EAST);
-        JButton nappi = new JButton("Feed #1");
-        nappi.addActionListener(new Kuuntelija());
-        container.add(nappi);
+        JPanel p = new JPanel();
+        p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
+
+        JLabel label = new JLabel();
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(2, 1));
+        JTextArea teksti = new JTextArea();
+        JButton button = new JButton("Lisää");
+
+        SyotteenLisaaja s = new SyotteenLisaaja(teksti, p);
+        button.addActionListener(s);
+
+        panel.add(teksti);
+        panel.add(button);
+        p.add(label);
+        container.add(p);
+        container.add(panel, BorderLayout.SOUTH);
+
     }
 
     public JFrame getFrame() {
