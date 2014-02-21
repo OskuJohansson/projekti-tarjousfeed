@@ -3,6 +3,9 @@ package tarjousfeed.test;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import tarjousfeed.logiikka.Jarjestelma;
+import tarjousfeed.logiikka.Kayttaja;
+import tarjousfeed.logiikka.Yritys;
 
 /**
  * Unit test for simple App.
@@ -26,14 +29,13 @@ public class AppTest
         return new TestSuite(AppTest.class);
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp() {
-        assertTrue(true);
+ 
+    public void rekisteroityminenHuonollaSalasanalla() {
+        Jarjestelma j = new Jarjestelma();
+        Kayttaja k = new Yritys("Testi", "a");
+        j.rekisteroidy(k);
+        assertFalse(j.getKayttajat().contains(k));
     }
     
-    public void testFail(){
-        assertTrue(false);
-    }
+
 }

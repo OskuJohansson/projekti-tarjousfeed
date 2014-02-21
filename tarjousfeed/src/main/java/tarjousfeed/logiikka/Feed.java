@@ -5,22 +5,22 @@ import java.util.*;
 
 public class Feed {
 
-    private final Map<Yritys, ArrayList<Syote>> syotteet;
+    private final Map<Yritys, ArrayList<Paivitys>> paivitykset;
 
     public Feed() {
-        this.syotteet = new HashMap<>();
+        this.paivitykset = new HashMap<>();
     }
 
-    public ArrayList<Syote> haeYrityksenSyotteet(Yritys y) {
-        return syotteet.get(y);
+    public ArrayList<Paivitys> haeYrityksenPaivitykset(Yritys y) {
+        return paivitykset.get(y);
     }
 
-    public boolean lisaaSyote(Yritys y, Syote s) {
+    public boolean lisaaPaivitys(Yritys y, Paivitys s) {
 
-        if (syotteet.get(y) == null) {
-            syotteet.put(y, new ArrayList<Syote>());
+        if (paivitykset.get(y) == null) {
+            paivitykset.put(y, new ArrayList<Paivitys>());
         }
-        syotteet.get(y).add(s);
+        paivitykset.get(y).add(s);
         return true;
     }
       

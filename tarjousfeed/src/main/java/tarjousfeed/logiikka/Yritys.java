@@ -14,19 +14,19 @@ import java.util.*;
  */
 public class Yritys extends Kayttaja {
     
-    private final List<Syote> syotteet;
+    private final List<Paivitys> paivitykset;
 
     public Yritys(String kayttajanimi, String salasana) {
         super(kayttajanimi, salasana);
-        this.syotteet = new ArrayList<>();
+        this.paivitykset = new ArrayList<>();
     }
     
-    public void asetaSyote(Syote syote) {
-        syotteet.add(syote);
+    public void asetaPaivitys(Paivitys syote) {
+        paivitykset.add(syote);
     }
 
-    public List<Syote> getSyotteet() {
-        return syotteet;
+    public List<Paivitys> getPaivitykset() {
+        return paivitykset;
     }
     
     

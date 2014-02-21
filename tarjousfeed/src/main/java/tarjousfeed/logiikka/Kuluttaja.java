@@ -1,34 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package tarjousfeed.logiikka;
 
 import java.util.*;
 
-/**
- *
- * @author oskajoha
- */
 public class Kuluttaja extends Kayttaja {
-    
-    private List<Yritys> suosikkiyritykset;
-    private List<String> suosikkisyotteet;
+
+    private final List<Yritys> suosikkiyritykset;
+    private final List<String> suosikkitunnisteet;
 
     public Kuluttaja(String kayttajanimi, String salasana) {
         super(kayttajanimi, salasana);
-        this.suosikkisyotteet = new ArrayList<>();
+        this.suosikkitunnisteet = new ArrayList<>();
         this.suosikkiyritykset = new ArrayList<>();
     }
-    
-    public void asetaSuosikiksi(Yritys yritys) {
+
+    public void asetaYritysSuosikiksi(Yritys yritys) {
         suosikkiyritykset.add(yritys);
     }
-    
-    public void asetaSuosikiksi(String syote) {
-        suosikkisyotteet.add(syote);
+
+    public void asetaTunnisteSuosikiksi(String tunniste) {
+        if (!suosikkitunnisteet.contains(tunniste)) {
+            suosikkitunnisteet.add(tunniste);
+        }
     }
-    
 }

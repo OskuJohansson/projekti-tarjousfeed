@@ -57,28 +57,34 @@ public class Jarjestelma {
         }
     }
 
-    public boolean lisaaSyote(Yritys y, Syote s) {
+    public boolean lisaaPaivitys(Yritys y, Paivitys s) {
         if (!kayttajat.contains(y)) {
             return false;
         }
-        return feed.lisaaSyote(y, s);
+        return feed.lisaaPaivitys(y, s);
     }
 
-    public void naytaTunnisteet(Yritys y, Syote s) {
-        if (feed.haeYrityksenSyotteet(y).contains(s)) {
+    public void naytaTunnisteet(Yritys y, Paivitys s) {
+        if (feed.haeYrityksenPaivitykset(y).contains(s)) {
             System.out.println(s.getTunnisteet());
         } else {
             System.out.println("Syötettä ei löytynyt!");
         }
     }
 
-    public void naytaSyote(Yritys y, Syote s) {
-        if (feed.haeYrityksenSyotteet(y).contains(s)) {
+    public void naytaPaivitys(Yritys y, Paivitys s) {
+        if (feed.haeYrityksenPaivitykset(y).contains(s)) {
             System.out.println("Syote: " + s.getSisalto());
 
         } else {
             System.out.println("Syotetta ei löytynyt!");
         }
     }
+
+    public ArrayList<Kayttaja> getKayttajat() {
+        return kayttajat;
+    }
+    
+    
 
 }

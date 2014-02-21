@@ -2,16 +2,16 @@ package tarjousfeed.logiikka;
 
 import java.util.*;
 
-public class Syote {
+public class Paivitys {
 
     private String sisalto;
     private final List<String> tunnisteet;
 
-    public Syote() {
+    public Paivitys() {
         this.tunnisteet = new ArrayList<>();
     }
 
-    public Syote(String sisalto) {
+    public Paivitys(String sisalto) {
         this.sisalto = sisalto;
         this.tunnisteet = new ArrayList<>();
     }
