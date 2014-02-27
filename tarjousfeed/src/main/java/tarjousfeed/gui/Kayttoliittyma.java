@@ -6,7 +6,6 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.*;
 import tarjousfeed.logiikka.Jarjestelma;
-
 import tarjousfeed.logiikka.Kuluttaja;
 
 /**
@@ -37,7 +36,6 @@ public class Kayttoliittyma implements Runnable {
 
     private void luoKomponentit(Container c) {
         new Kirjautumisikkuna(frame, c, j).luoKirjautumisIkkuna();
-        
     }
 
  

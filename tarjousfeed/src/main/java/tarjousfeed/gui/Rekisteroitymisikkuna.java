@@ -72,6 +72,7 @@ public class Rekisteroitymisikkuna {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            //toteuta vielä poikkeus, jos salasana ei kelpaa
             Kayttaja k = new Kayttaja(kayttajanimiField.getText(), salasanaField.getText());
             k.setNimi(nimiField.getText());
             k.setEmail(emailField.getText());

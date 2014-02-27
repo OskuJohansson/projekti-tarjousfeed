@@ -31,6 +31,7 @@ public class Kirjautumisikkuna {
     private Jarjestelma j;
     private JTextField kayt;
     private JPasswordField sala;
+    private Kayttaja kayttaja;
 
     public Kirjautumisikkuna(JFrame frame, Container c, Jarjestelma j) {
         this.frame = frame;
@@ -55,7 +56,7 @@ public class Kirjautumisikkuna {
         sala.setBounds(75, 360, 250, 20);
         kirjaudu.setBounds(75, 390, 125, 20);
         rekisteroidy.setBounds(200, 390, 125, 20);
-        kirjaudu.addActionListener(new NapinKuuntelija());
+        kirjaudu.addActionListener(new Kirjautuja());
         rekisteroidy.addActionListener(new RekisteroitymiseenSiirtaja());
 
         c.add(kayttajanimi);
@@ -66,7 +67,7 @@ public class Kirjautumisikkuna {
         c.add(rekisteroidy);
     }
 
-    private class NapinKuuntelija implements ActionListener {
+    private class Kirjautuja implements ActionListener {
 
      
         public void actionPerformed(ActionEvent e) {
@@ -74,8 +75,9 @@ public class Kirjautumisikkuna {
 
                 for (Kayttaja k : j.getKayttajat()) {
                     if (k.getKayttajanimi().equals(kayt.getText()) && k.getSalasana().equals(apu)) {
+                        kayttaja = k;
                         frame.getContentPane().removeAll();
-                        new Feed(c, frame, j).luoFeedIkkuna();
+                        new Feed(c, frame, j, kayttaja).luoFeedIkkuna();
                         frame.getContentPane().revalidate();
                         return;
                     } else {

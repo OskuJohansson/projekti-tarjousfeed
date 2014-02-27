@@ -10,8 +10,10 @@ public class Main {
         
         Jarjestelma j = new Jarjestelma();
         
-//        Kuluttaja osku = new Kuluttaja("Osku", "Banaani13");
-//        j.rekisteroidy(osku);
+        Kuluttaja osku = new Kuluttaja("Osku", "Banaani13");
+        j.rekisteroidy(osku);
+        osku.asetaTunnisteSuosikiksi("Pyöräily");
+        osku.asetaTunnisteSuosikiksi("Kikkailu");
 //        j.kirjauduSisaan("Osku", "Banaani13");
 //        osku.asetaTunnisteSuosikiksi("Kaikki");
 //        osku.asetaTunnisteSuosikiksi("Ei mitään");

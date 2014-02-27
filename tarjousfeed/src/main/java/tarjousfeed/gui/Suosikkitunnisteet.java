@@ -15,6 +15,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import tarjousfeed.logiikka.Jarjestelma;
+import tarjousfeed.logiikka.Kayttaja;
 import tarjousfeed.logiikka.Kuluttaja;
 
 /**
@@ -25,12 +27,14 @@ public class Suosikkitunnisteet {
     
     private Container c;
     private JFrame frame;
+    private Jarjestelma j;
     private Kuluttaja kuluttaja;
     
-    public Suosikkitunnisteet(Container c, JFrame frame, Kuluttaja kayttaja) {
+    public Suosikkitunnisteet(Container c, JFrame frame, Jarjestelma j, Kuluttaja k) {
         this.frame = frame;
         this.c = c;
-        this.kuluttaja = kayttaja;
+        this.j = j;
+        this.kuluttaja = k;
         
     }
     
@@ -40,7 +44,9 @@ public class Suosikkitunnisteet {
         JPanel p = new JPanel();
         p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
         for (String tunniste : kuluttaja.getSuosikkitunnisteet()) {
-            p.add(new JLabel(tunniste));
+            JButton button = new JButton(tunniste);
+            button.setPreferredSize(new Dimension(frame.getWidth(), 15));
+            p.add(button);
         }
 
         JPanel panel = new JPanel();
@@ -51,6 +57,8 @@ public class Suosikkitunnisteet {
         panel.add(new JButton("Suosikit"));
         c.add(p);
         c.add(panel, BorderLayout.SOUTH);
+        
+
     }
     
 }
