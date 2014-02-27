@@ -85,6 +85,13 @@ public class Jarjestelma {
         return kayttajat;
     }
     
+    public ArrayList<String> getKayttajanimet() {
+        ArrayList<String> apu = new ArrayList<>();
+        for (Kayttaja k : kayttajat) {
+            apu.add(k.getKayttajanimi());
+        }
+        return apu;
+    }
     
 
 }

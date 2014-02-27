@@ -9,8 +9,12 @@ public class Main {
     public static void main(String[] args) {
         
         Jarjestelma j = new Jarjestelma();
-        Kayttaja osku = new Kuluttaja("Osku", "Banaani13");
-
+        
+//        Kuluttaja osku = new Kuluttaja("Osku", "Banaani13");
+//        j.rekisteroidy(osku);
+//        j.kirjauduSisaan("Osku", "Banaani13");
+//        osku.asetaTunnisteSuosikiksi("Kaikki");
+//        osku.asetaTunnisteSuosikiksi("Ei mitään");
 //        System.out.println("Onko Osku kirjautunut: " + osku.onkoKirjautunut());
 //        j.rekisteroidy(osku);
 //        j.kirjauduSisaan("osku", "banaani13");
@@ -40,7 +44,7 @@ public class Main {
 //        j.naytaTunnisteet(hese, new Syote());
         
         
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma();
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(j);
         SwingUtilities.invokeLater(kayttoliittyma);
         
 

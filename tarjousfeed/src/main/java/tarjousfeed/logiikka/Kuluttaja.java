@@ -23,4 +23,8 @@ public class Kuluttaja extends Kayttaja {
             suosikkitunnisteet.add(tunniste);
         }
     }
+
+    public List<String> getSuosikkitunnisteet() {
+        return suosikkitunnisteet;
+    }
 }
